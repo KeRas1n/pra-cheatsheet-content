@@ -7,7 +7,7 @@
       "light": "#eef2ff",
       "items": [
         {
-          "term": "Jev, jistý jev, nemožný jev, doplněk",
+          "term": "TEST Jev, jistý jev, nemožný jev, doplněk",
           "body": "Jev A je podmnožina prostoru elementárních jevů Ω.\n• Jistý jev Ω — nastane vždy: P(Ω) = 1\n• Nemožný jev ∅ — nenastane nikdy: P(∅) = 0\n• Doplněk Ā — jev nenastal: P(Ā) = 1 − P(A)\n• Sjednocení A ∪ B: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)"
         },
         {
