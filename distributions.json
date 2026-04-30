@@ -87,6 +87,18 @@
       "variance": "n·(K/N)·((N−K)/N)·(N−n)/(N−1)",
       "desc": "Výběr bez vracení z konečné populace N, kde K prvků je 'úspěšných'. Konečná populace!",
       "light": "#fdf2f8"
+    },
+    {
+      "notation": "A",
+      "color": "#926900",
+      "mean": "E",
+      "params": "Hh",
+      "pmf": "P",
+      "example": "1+1=2",
+      "name": "Porno",
+      "variance": "X",
+      "desc": "D",
+      "light": "#9c0000"
     }
   ],
   "continuous": [
