@@ -1,0 +1,108 @@
+{
+  "sections": [
+    {
+      "id": "probability",
+      "title": "Základní pojmy pravděpodobnosti",
+      "color": "#6366f1",
+      "light": "#eef2ff",
+      "items": [
+        {
+          "term": "Jev, jistý jev, nemožný jev, doplněk",
+          "body": "Jev A je podmnožina prostoru elementárních jevů Ω.\n• Jistý jev Ω — nastane vždy: P(Ω) = 1\n• Nemožný jev ∅ — nenastane nikdy: P(∅) = 0\n• Doplněk Ā — jev nenastal: P(Ā) = 1 − P(A)\n• Sjednocení A ∪ B: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)"
+        },
+        {
+          "term": "Podmíněná pravděpodobnost P(A|B)",
+          "body": "Pravděpodobnost jevu A za podmínky, že nastal jev B.\n\nP(A|B) = P(A ∩ B) / P(B),   P(B) > 0\n\nPozor: P(A|B) ≠ P(B|A)  —  záměna je časté chyba!"
+        },
+        {
+          "term": "Nezávislost jevů",
+          "body": "A, B jsou nezávislé  ⟺  P(A ∩ B) = P(A) · P(B)\n\nNezávislost po dvou: každý pár je nezávislý.\nTotální (vzájemná) nezávislost: platí pro všechny podmnožiny.\n\nTotální nezávislost ⟹ nezávislost po dvou, ale NE naopak!"
+        },
+        {
+          "term": "Věta o úplné pravděpodobnosti",
+          "body": "Nechť B₁, …, Bₙ tvoří rozklad Ω (disjunktní, sjednocení = Ω, P(Bᵢ) > 0).\n\nP(A) = Σᵢ P(A|Bᵢ) · P(Bᵢ)\n\nPoužití: rozdělíme složitou situaci na jednodušší scénáře."
+        },
+        {
+          "term": "Bayesova věta",
+          "body": "Obrácení podmíněné pravděpodobnosti — \"co bylo příčinou pozorovaného výsledku?\"\n\nP(Bᵢ|A) = P(A|Bᵢ) · P(Bᵢ) / P(A)\n\nkde P(A) dopočteme větou o úplné pravděpodobnosti."
+        }
+      ]
+    },
+    {
+      "id": "rv",
+      "title": "Náhodná veličina",
+      "color": "#0ea5e9",
+      "light": "#f0f9ff",
+      "items": [
+        {
+          "term": "Diskrétní vs. spojitá náhodná veličina",
+          "body": "Diskrétní NV: nabývá spočetně mnoha hodnot (celá čísla, …).\n  → popsána PMF: P(X = xᵢ) = pᵢ,  Σpᵢ = 1\n\nSpojitá NV: nabývá hodnot z intervalu.\n  → popsána PDF f(x) ≥ 0,  ∫f(x)dx = 1\n  → P(X = c) = 0 pro každé konkrétní c!"
+        },
+        {
+          "term": "Distribuční funkce F(x)",
+          "body": "F(x) = P(X ≤ x)\n\nVlastnosti:\n• neklesající, pravostranně spojitá\n• F(−∞) = 0,  F(+∞) = 1\n• Diskrétní: schodovitá funkce\n• Spojitá: F(x) = ∫₋∞ˣ f(t) dt,  f(x) = F′(x)\n\nP(a < X ≤ b) = F(b) − F(a)"
+        },
+        {
+          "term": "Střední hodnota E[X]",
+          "body": "Diskrétní:   E[X] = Σ xᵢ · P(X = xᵢ)\nSpojitá:     E[X] = ∫ x · f(x) dx\n\nVlastnosti:\n• E[aX + b] = a·E[X] + b\n• E[X + Y] = E[X] + E[Y]  (vždy, i při závislosti)\n• E[X · Y] = E[X]·E[Y]  jen při nezávislosti"
+        },
+        {
+          "term": "Rozptyl Var(X), směrodatná odchylka σ",
+          "body": "Var(X) = E[(X − E[X])²] = E[X²] − (E[X])²\n\nσ(X) = √Var(X)\n\nVlastnosti:\n• Var(aX + b) = a²·Var(X)\n• Var(X + Y) = Var(X) + Var(Y) + 2·Cov(X,Y)\n• Při nezávislosti: Var(X + Y) = Var(X) + Var(Y)"
+        },
+        {
+          "term": "Kovariance a korelace",
+          "body": "Cov(X,Y) = E[(X−E[X])(Y−E[Y])] = E[XY] − E[X]·E[Y]\n\nKorelační koeficient (normalizovaná kovariance):\nρ(X,Y) = Cov(X,Y) / (σ(X)·σ(Y)),   ρ ∈ [−1, 1]\n\nρ = 0 → lineárně nekorelované (≠ nezávislé!)\nNezávislost ⟹ ρ = 0, ale NE naopak."
+        }
+      ]
+    },
+    {
+      "id": "limit",
+      "title": "Limitní věty",
+      "color": "#10b981",
+      "light": "#ecfdf5",
+      "items": [
+        {
+          "term": "Centrální limitní věta (CLV)",
+          "body": "Nechť X₁, X₂, … jsou iid s E[Xᵢ] = μ, Var(Xᵢ) = σ² < ∞. Pak:\n\nSₙ = X₁ + … + Xₙ  ~  přibližně  N(nμ, nσ²)\n\nX̄ₙ = Sₙ/n  ~  přibližně  N(μ, σ²/n)\n\nStandardizace:  Zₙ = (Sₙ − nμ) / (σ√n)  →  N(0,1)\n\nPraktické pravidlo: aproximace dobrá pro n ≥ 30."
+        },
+        {
+          "term": "Zákon velkých čísel",
+          "body": "Slabý ZVČ: X̄ₙ →ᴾ μ  (konvergence v pravděpodobnosti)\n  Pro každé ε > 0:  P(|X̄ₙ − μ| > ε) → 0  pro n → ∞\n\nSilný ZVČ: X̄ₙ → μ  skoro jistě (s pravděpodobností 1)\n\nSilný ⟹ slabý, ale NE naopak."
+        },
+        {
+          "term": "Čebyševova nerovnost",
+          "body": "Pro libovolnou NV X s konečným rozptylem:\n\nP(|X − E[X]| ≥ k) ≤ Var(X) / k²\n\nNebo ekvivalentně (k = t·σ):\nP(|X − μ| ≥ t·σ) ≤ 1/t²\n\nPoužití: horní odhad pravděpodobnosti odchylky, když neznáme rozdělení. Výsledek je konzervativní (skutečnost bývá lepší)."
+        }
+      ]
+    },
+    {
+      "id": "stats",
+      "title": "Statistika",
+      "color": "#f59e0b",
+      "light": "#fffbeb",
+      "items": [
+        {
+          "term": "Náhodný výběr",
+          "body": "Výběr x₁, …, xₙ jsou realizace iid NV X₁, …, Xₙ se stejným rozdělením jako základní soubor.\n\nn = rozsah výběru\nReprezentativnost = náhodný výběr zaručuje nestrannost."
+        },
+        {
+          "term": "Výběrový průměr X̄ a výběrový rozptyl S²",
+          "body": "X̄ = (X₁ + … + Xₙ) / n\n  E[X̄] = μ,   Var(X̄) = σ²/n\n\nS² = 1/(n−1) · Σ(Xᵢ − X̄)²   (nestranný odhad σ²)\n\nPozor: dělíme (n−1), ne n!  Důvod: oprava za ztrátu 1 stupně volnosti odhadem μ pomocí X̄."
+        },
+        {
+          "term": "Bodový odhad — MLE a metoda momentů",
+          "body": "MLE (Maximum Likelihood Estimation):\n  Hledáme θ̂ maximalizující věrohodnostní funkci L(θ) = Πf(xᵢ; θ).\n  Prakticky: maximalizujeme ln L(θ) (log-likelihood).\n\nMetoda momentů:\n  Klademe výběrové momenty = teoretické momenty a řešíme soustavu.\n  E[X] = X̄  →  odhadneme parametr."
+        },
+        {
+          "term": "Intervalový odhad — spolehlivost 1−α",
+          "body": "Interval spolehlivosti (IS) na hladině 1−α:\n  Náhodný interval (L, U) takový, že P(L ≤ θ ≤ U) = 1−α.\n\nTypicky α = 0.05  →  95% IS.\n\nInterpretace: kdybychom opakovali výběr mnohokrát, 95 % takto zkonstruovaných intervalů by obsahovalo θ.\n(NE: \"pravděpodobnost 95 %, že θ leží v tomto konkrétním intervalu\"!)"
+        },
+        {
+          "term": "Testování hypotéz",
+          "body": "H₀ (nulová hypotéza) vs. Hₐ (alternativní hypotéza)\n\nChyba 1. druhu (α): zamítneme H₀, i když je pravdivá.  →  hladina testu α.\nChyba 2. druhu (β): nezamítneme H₀, i když je nepravdivá.  →  síla testu = 1−β.\n\np-hodnota: nejmenší α, při kterém bychom ještě zamítli H₀.\n  p < α  →  zamítáme H₀\n  p ≥ α  →  nezamítáme H₀  (≠ přijímáme H₀!)\n\nTestová statistika → porovnáme s kritickou hodnotou nebo spočítáme p-hodnotu."
+        }
+      ]
+    }
+  ]
+}

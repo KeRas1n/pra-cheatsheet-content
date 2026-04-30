@@ -1,0 +1,156 @@
+{
+  "discrete": [
+    {
+      "name": "Alternativní",
+      "notation": "X ~ Alt(p)",
+      "color": "#6366f1",
+      "light": "#eef2ff",
+      "params": "p ∈ (0,1)",
+      "pmf": "P(X=k) = pᵏ(1−p)¹⁻ᵏ,  k ∈ {0,1}",
+      "mean": "p",
+      "variance": "p(1−p)",
+      "desc": "X = 1, jestliže jev nastal (úspěch), X = 0, jestliže nenastal (neúspěch). Binární situace.",
+      "keywords": ["zda nastal jev", "úspěch nebo neúspěch", "něco se stalo nebo ne", "ano / ne", "jeden pokus", "jeden výběr", "zmetek nebo ne", "padl nebo nepadl"],
+      "example": "Hod mincí — padl líc (1) nebo rub (0). Náhodně vybraný výrobek je zmetek (1) nebo ne (0). Atlet skočil přes 5 m (1) nebo ne (0)."
+    },
+    {
+      "name": "Binomické",
+      "notation": "X ~ Bi(n, p)",
+      "color": "#8b5cf6",
+      "light": "#f5f3ff",
+      "params": "n ∈ ℕ,  p ∈ (0,1)",
+      "pmf": "P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ",
+      "mean": "np",
+      "variance": "np(1−p)",
+      "desc": "X = počet úspěchů mezi n pokusy (v/z/mezi n [jednotkami]). Výběr s vracením, nezávislé pokusy.",
+      "keywords": ["n pokusů", "počet úspěchů", "kolik ze n", "mezi n", "uvnitř n", "z n nezávislých", "s vracením", "série pokusů", "maximálně / přesně k ze n"],
+      "example": "Kolik ze 6 atletů skočí přes 5 m? Kolikrát z 10 zápasů vyhraje hráč A? Kolik ze 220 cestujících se dostaví k odletu?"
+    },
+    {
+      "name": "Poissonovo",
+      "notation": "X ~ Po(λ)",
+      "color": "#0ea5e9",
+      "light": "#f0f9ff",
+      "params": "λ > 0",
+      "pmf": "P(X=k) = e⁻λ · λᵏ / k!",
+      "mean": "λ",
+      "variance": "λ",
+      "desc": "X = počet objektů/událostí v/na/za d-rozměrném objemu nebo čase. Charakteristické: E[X] = Var(X) = λ.",
+      "keywords": ["v/na/za [jednotku]", "průměrně λ", "počet objektů v oblasti", "počet událostí za čas", "příchody", "počet poruch", "na plochu / objem", "počet kazů", "počet chyb", "nejčastěji"],
+      "example": "Počet kazů na 50 m látky (průměr 1 kaz/10 m → λ=5). Počet hovorů za 10 minut (12/hod → λ=2). Počet zákazníků za den (Po(20) nebo Po(25))."
+    },
+    {
+      "name": "Geometrické",
+      "notation": "X ~ Geom(p)",
+      "color": "#10b981",
+      "light": "#ecfdf5",
+      "params": "p ∈ (0,1)",
+      "pmf": "P(X=k) = (1−p)ᵏ · p,  k = 0, 1, 2, …",
+      "mean": "(1−p)/p",
+      "variance": "(1−p)/p²",
+      "desc": "X = počet neúspěchů před 1. úspěchem. Klíčové: 'než nastane 1. úspěch', 'nejpozději k-tý pokus'.",
+      "keywords": ["než nastane 1. úspěch", "nejpozději k-tý", "počet neúspěchů před prvním", "čekat na první", "bezpaměťové", "nejpozději #", "až před prvním"],
+      "example": "Kolik neúspěšných hodů předchází prvnímu koši basketbalisty? Kolikáté narozené dítě je první holčička?"
+    },
+    {
+      "name": "Hypergeometrické",
+      "notation": "X ~ H(N, K, n)",
+      "color": "#ec4899",
+      "light": "#fdf2f8",
+      "params": "N, K, n ∈ ℕ",
+      "pmf": "P(X=k) = C(K,k) · C(N−K, n−k) / C(N,n)",
+      "mean": "nK/N",
+      "variance": "n·(K/N)·((N−K)/N)·(N−n)/(N−1)",
+      "desc": "Výběr bez vracení z konečné populace N, kde K prvků je 'úspěšných'. Konečná populace!",
+      "keywords": ["bez vracení", "výběr z urny", "konečná populace", "losování bez vrácení", "tažení karet", "výběr z balíčku"],
+      "example": "Kolik es padne při 2 tazích z 32 karet bez vracení (K=4, N=32, n=2)? Kolik dívek v náhodné čtveřici ze 14 studentů (8 VŠ, 6 SŠ)?"
+    }
+  ],
+  "continuous": [
+    {
+      "name": "Rovnoměrné",
+      "notation": "X ~ Ro(a, b)",
+      "color": "#64748b",
+      "light": "#f8fafc",
+      "params": "a < b",
+      "pmf": "f(x) = 1/(b−a),  x ∈ [a, b]",
+      "mean": "(a+b)/2",
+      "variance": "(b−a)²/12",
+      "desc": "X = náhodné číslo z (a,b) nebo doba čekání na pravidelnou událost [jednotka]. Všechny hodnoty stejně pravděpodobné.",
+      "keywords": ["každých t [jednotka]", "náhodně z intervalu", "stejně pravděpodobné", "rovnoměrně rozloženo", "zaokrouhlovací chyba", "čekání na pravidelnou událost", "pravidelný interval"],
+      "example": "Chyba zaokrouhlení na 1 desetinné místo: X ~ Ro(−0.05, 0.05). Doba čekání na tramvaj s intervalem 10 min: X ~ Ro(0, 10)."
+    },
+    {
+      "name": "Normální",
+      "notation": "X ~ N(μ, σ²)",
+      "color": "#3b82f6",
+      "light": "#eff6ff",
+      "params": "μ ∈ ℝ,  σ > 0",
+      "pmf": "f(x) = 1/(σ√2π) · exp(−(x−μ)²/2σ²)",
+      "mean": "μ",
+      "variance": "σ²",
+      "desc": "Zvonovitá symetrická křivka. CLV: součet mnoha nezávislých vlivů. Pravidlo 68–95–99,7 %.",
+      "keywords": ["střední hodnota μ, rozptyl σ²", "symetrické", "výška lidí", "chyba měření", "velký výběr", "CLV", "délka hodu", "standardizace"],
+      "example": "Výška dětí v 1. třídě: X ~ N(130, 36). Délka hodu oštěpařky Anny: N(67, 36). Počet zajíců za 49 dní aproximujeme normálním (CLV)."
+    },
+    {
+      "name": "Exponenciální",
+      "notation": "X ~ Exp(λ)",
+      "color": "#14b8a6",
+      "light": "#f0fdfa",
+      "params": "λ > 0",
+      "pmf": "f(x) = λ · e^(−λx),  x ≥ 0",
+      "mean": "1/λ",
+      "variance": "1/λ²",
+      "desc": "X = doba čekání na (první) nepravidelnou událost [jednotka]. Bezpaměťové: zbývající čas nezávisí na čase čekání.",
+      "keywords": ["čas než nastane", "čas až před", "doba čekání na", "doba do poruchy", "bezpaměťové", "Poissonův proces", "čas mezi příchody", "životnost", "nejdříve za t"],
+      "example": "Čas do příchodu dalšího hovoru (12/hod → λ=1/5 min): X ~ Exp(1/5). Doba do poruchy výtahu: X ~ Exp(λ)."
+    },
+    {
+      "name": "Chi-kvadrát",
+      "notation": "X ~ χ²(k)",
+      "color": "#ef4444",
+      "light": "#fef2f2",
+      "params": "k ∈ ℕ  (stupně volnosti)",
+      "pmf": "Y = X₁² + … + Xₖ²,  Xᵢ ~ N(0,1) nezávislé",
+      "mean": "k",
+      "variance": "2k",
+      "desc": "Součet k čtverců nezávislých N(0,1). Základ testů dobré shody a intervalových odhadů rozptylu.",
+      "keywords": ["test dobré shody", "χ² test", "rozptyl výběru", "kontingenční tabulka", "test nezávislosti", "intervalový odhad σ²"],
+      "example": "Test, zda pobočky jsou stejně výnosné (χ² test dobré shody). Test nezávislosti barvy očí a vlasů (kontingenční tabulka 3×2). IS pro rozptyl σ²."
+    },
+    {
+      "name": "Studentovo t",
+      "notation": "X ~ t(ν)",
+      "color": "#a855f7",
+      "light": "#faf5ff",
+      "params": "ν ∈ ℕ  (stupně volnosti)",
+      "pmf": "T = (X̄ − μ₀) / (Sₙ/√n),  ν = n−1",
+      "mean": "0",
+      "variance": "ν/(ν−2),  ν > 2",
+      "desc": "Pro testování střední hodnoty při neznámém σ². Těžší chvosty než N(0,1). Pro ν → ∞ → N(0,1).",
+      "keywords": ["malý výběr", "σ² neznámá", "t-test", "odhad průměru", "jednovýběrový t-test", "dvouvýběrový t-test", "párový t-test", "odhadujeme μ"],
+      "example": "Test, zda průměrná spotřeba auta je 8 l/100 km (n=49, S²=2.56). Test střední hodnoty počtu pacientů (n=64, S²=36). Dvouvýběrový t-test pro dvě skupiny."
+    }
+  ],
+  "relations": [
+    { "from": "Bi(n,p)", "to": "Po(λ=np)", "cond": "n→∞, p→0, np=λ konstanta" },
+    { "from": "Bi(n,p)", "to": "N(np, np(1−p))", "cond": "n velké, np(1−p) > 5 (CLV)" },
+    { "from": "Geom(p)", "to": "Exp(λ)", "cond": "diskrétní → spojitý analog (čas do události)" },
+    { "from": "N(0,1)² × k", "to": "χ²(k)", "cond": "součet k čtverců standardních normálních" },
+    { "from": "t(ν) pro ν→∞", "to": "N(0,1)", "cond": "chvosty se blíží normálnímu" },
+    { "from": "Po(λ) ↔ Exp(λ)", "to": "vzájemný vztah", "cond": "počet událostí ↔ čas mezi událostmi" }
+  ],
+  "memoryRules": [
+    ["Jeden pokus, výsledek 0 nebo 1 (zda nastal jev)", "Alternativní (Alt)"],
+    ["Počet úspěchů v/z/mezi n pokusy", "Binomické (Bi)"],
+    ["Počet objektů/událostí v/na/za [oblast nebo čas]", "Poissonovo (Po)"],
+    ["Počet neúspěchů než nastane 1. úspěch / nejpozději k-tý", "Geometrické (Geom)"],
+    ["Výběr bez vracení z konečné populace", "Hypergeometrické (H)"],
+    ["Čas než nastane událost / čas až před [nepravidelnou]", "Exponenciální (Exp)"],
+    ["Každých t [jednotka] / zaokrouhlování / náhodně v intervalu", "Rovnoměrné (Ro)"],
+    ["Součet mnoha vlivů / velký výběr / CLV", "Normální (N)"],
+    ["Test dobré shody / kontingenční tabulka / IS pro σ²", "Chi-kvadrát (χ²)"],
+    ["Malý výběr, σ² neznámá, test nebo IS pro μ", "Studentovo t"]
+  ]
+}
