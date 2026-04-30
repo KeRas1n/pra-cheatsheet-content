@@ -1,28 +1,6 @@
 {
   "discrete": [
     {
-      "notation": "X ~ Alt(p)",
-      "color": "#6366f1",
-      "mean": "p",
-      "params": "p ∈ (0,1)",
-      "pmf": "P(X=k) = pᵏ(1−p)¹⁻ᵏ,  k ∈ {0,1}",
-      "example": "Hod mincí — padl líc (1) nebo rub (0). Náhodně vybraný výrobek je zmetek (1) nebo ne (0). Atlet skočil přes 5 m (1) nebo ne (0).",
-      "keywords": [
-        "zda nastal jev",
-        "úspěch nebo neúspěch",
-        "něco se stalo nebo ne",
-        "ano / ne",
-        "jeden pokus",
-        "jeden výběr",
-        "zmetek nebo ne",
-        "padl nebo nepadl"
-      ],
-      "name": "Alternativní [TEST]",
-      "variance": "p(1−p)",
-      "desc": "X = 1, jestliže jev nastal (úspěch), X = 0, jestliže nenastal (neúspěch). Binární situace.",
-      "light": "#eef2ff"
-    },
-    {
       "notation": "X ~ Bi(n, p)",
       "color": "#8b5cf6",
       "mean": "np",
