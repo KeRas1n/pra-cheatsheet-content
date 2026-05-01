@@ -17,7 +17,7 @@
         "zmetek nebo ne",
         "padl nebo nepadl"
       ],
-      "name": "Alternativ",
+      "name": "Alternativní",
       "variance": "p(1−p)",
       "desc": "X = 1, jestliže jev nastal (úspěch), X = 0, jestliže nenastal (neúspěch). Binární situace.",
       "light": "#eef2ff"
