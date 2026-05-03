@@ -43,6 +43,10 @@
           "body": "F(x) = P(X ≤ x)\n\nVlastnosti:\n• neklesající, pravostranně spojitá\n• F(−∞) = 0,  F(+∞) = 1\n• Diskrétní: schodovitá funkce\n• Spojitá: F(x) = ∫₋∞ˣ f(t) dt,  f(x) = F′(x)\n\nP(a < X ≤ b) = F(b) − F(a)"
         },
         {
+          "term": "Hustota pravděpodobnosti f(x)",
+          "body": "Hustota pravděpodobnosti f(x) popisuje, jak je pravděpodobnost „rozložena\" podél hodnot náhodné veličiny X. \n\nSamotná hodnota f(x) není pravděpodobnost — pravděpodobnost získáme až integrací:\nP(a≤X≤b)=∫ab​f(x)dx\n\n\nPro exponenciální rozdělení má hustota tvar:\nf(x)=λe^−λx"
+        },
+        {
           "term": "Střední hodnota E[X]",
           "body": "Diskrétní:   E[X] = Σ xᵢ · P(X = xᵢ)\nSpojitá:     E[X] = ∫ x · f(x) dx\n\nVlastnosti:\n• E[aX + b] = a·E[X] + b\n• E[X + Y] = E[X] + E[Y]  (vždy, i při závislosti)\n• E[X · Y] = E[X]·E[Y]  jen při nezávislosti"
         },
