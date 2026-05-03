@@ -96,7 +96,7 @@
         },
         {
           "term": "Bodový odhad — MLE a metoda momentů",
-          "body": "MLE (Maximum Likelihood Estimation):\n  Hledáme θ̂ maximalizující věrohodnostní funkci L(θ) = Πf(xᵢ; θ).\n  Prakticky: maximalizujeme ln L(θ) (log-likelihood).\n\nMetoda momentů:\n  Klademe výběrové momenty = teoretické momenty a řešíme soustavu.\n  E[X] = X̄  →  odhadneme parametr."
+          "body": "MLE (Maximum Likelihood Estimation):\n  Hledáme θ̂ maximalizující věrohodnostní funkci L(θ) = Πf(xᵢ; θ).\n  Prakticky: maximalizujeme ln L(θ) (log-likelihood).\n\nPopis:\nHledáme takové parametry, které maximalizují PST, že náhodná veličina X bude mít hodnotu x. Konstanty lze při výpočtu vynechávat (zmizí při derivaci).\n\nPostup:\nZapište věrohodnostní funkci L(θ) = ∏ f(xᵢ | θ) (součin všech PST (nebo hustot), do kterých dosadíme hodnoty ze zadání).\n\nNajděte přirozený log: ℓ(θ) = ln L(θ) = ∑ ln f(xᵢ | θ)\n\nNajděte derivaci d/dθ ℓ(θ)\n\nNastavte derivaci = 0 a vyřešte rovnici.\nd/dθ  ℓ(θ)  = 0\n\nMetoda momentů:\n  Klademe výběrové momenty = teoretické momenty a řešíme soustavu.\n  E[X] = X̄  →  odhadneme parametr."
         },
         {
           "term": "Intervalový odhad — spolehlivost 1−α",
